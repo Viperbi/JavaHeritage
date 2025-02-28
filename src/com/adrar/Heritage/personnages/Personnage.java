@@ -1,3 +1,5 @@
+package com.adrar.Heritage.personnages;
+
 public abstract class Personnage {
 
     private String nom;

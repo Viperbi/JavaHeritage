@@ -1,3 +1,5 @@
+import com.adrar.Heritage.personnages.Personnage;
+
 public class Partie {
 
     private Personnage joueur1;

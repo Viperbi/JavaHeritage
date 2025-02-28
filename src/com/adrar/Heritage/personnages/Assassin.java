@@ -1,4 +1,6 @@
-public class Assassin extends Personnage{
+package com.adrar.Heritage.personnages;
+
+public class Assassin extends Personnage {
 
     private Integer bonusAttaque;
 

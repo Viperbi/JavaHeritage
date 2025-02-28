@@ -1,4 +1,6 @@
-public class Guerrier extends Personnage{
+package com.adrar.Heritage.personnages;
+
+public class Guerrier extends Personnage {
 
 
 
