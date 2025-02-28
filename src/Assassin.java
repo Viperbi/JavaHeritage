@@ -21,11 +21,17 @@ public class Assassin extends Personnage{
         Integer dmg;
         if(temp <= 0.05) {
             dmg = this.getBonusAttaque() + this.getAttaque() - cible.getDefense();
+            if (dmg <= 0) {
+                dmg = 1;
+            }
             cible.setVie(cible.getVie() - dmg);
             System.out.println(this.getNom()+" attaque "+cible.getNom()+" et lui inflige "+dmg+" points de dégats.");
             System.out.println("Coup Critique !");
         }else{
             dmg = this.getAttaque()-cible.getDefense();
+            if (dmg <= 0) {
+                dmg = 1;
+            }
             cible.setVie(cible.getVie() -dmg);
             System.out.println(this.getNom()+" attaque "+cible.getNom()+" et lui inflige "+dmg+" points de dégats.");
         }

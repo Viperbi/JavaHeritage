@@ -37,23 +37,21 @@ public class Partie {
     public void lancerPartie(){
         while(nbrTour > 0){
             this.getJoueur1().attaquer(this.getJoueur2());
-            this.getJoueur2().attaquer(this.getJoueur1());
-            this.setNbrTour(this.getNbrTour()-1);
-            System.out.println("Plus que "+this.getNbrTour()+" tour restants.");
             if (this.getJoueur1().getVie() > 0 && this.getJoueur2().getVie() <=0){
                 System.out.println("Le joueur "+this.getJoueur1().getNom()+" remporte la partie.");
                 return;
-            }else if(this.getJoueur2().getVie() > 0 && this.getJoueur1().getVie() <=0){
+            }
+            this.getJoueur2().attaquer(this.getJoueur1());
+            if(this.getJoueur2().getVie() > 0 && this.getJoueur1().getVie() <=0){
                 System.out.println("Le joueur "+this.getJoueur2().getNom()+" remporte la partie.");
                 return;
             }
-            if(nbrTour == 0){
-                System.out.println("Aucun tour restant, le joueur "+ this.getJoueur1().getNom()+" a "+this.getJoueur1().getVie()+" points de vie restants. \n" +
-                        "Le joueur "+this.getJoueur2().getNom()+" a "+this.getJoueur2().getVie()+" points de vie restans. \n "+
-                        "La partie est donc terminée avec une égalité entre les 2 joueurs.");
-                return;
-            }
+            this.setNbrTour(this.getNbrTour()-1);
+            System.out.println("Plus que "+this.getNbrTour()+" tour restants.");
         }
+        System.out.println("Aucun tour restant, le joueur "+ this.getJoueur1().getNom()+" a "+this.getJoueur1().getVie()+" points de vie restants. \n" +
+                "Le joueur "+this.getJoueur2().getNom()+" a "+this.getJoueur2().getVie()+" points de vie restans. \n "+
+                "La partie est donc terminée avec une égalité entre les 2 joueurs.");
     }
 
 }
