@@ -1,20 +1,11 @@
-package com.adrar.Heritage.personnages;
+package com.adrar.Heritage.monstre;
 
-public class Assassin extends Personnage {
+import com.adrar.Heritage.personnages.Personnage;
 
-    private Integer bonusAttaque;
+public class Gobelin extends Personnage {
 
-    public Assassin(String nom){
-        super(nom,20,3,1,0.1,"healer");
-        this.bonusAttaque = 3;
-    }
-
-    public Integer getBonusAttaque() {
-        return bonusAttaque;
-    }
-
-    public void setBonusAttaque(Integer bonusAttaque) {
-        this.bonusAttaque = bonusAttaque;
+    public Gobelin(){
+        super("Cyclope",50,5,4,0.2,"monstre");
     }
 
     @Override
@@ -22,7 +13,7 @@ public class Assassin extends Personnage {
         double temp = Math.random();
         Integer dmg;
         if(temp <= 0.05) {
-            dmg = this.getBonusAttaque() + this.getAttaque() - cible.getDefense();
+            dmg = + this.getAttaque() - cible.getDefense();
             if (dmg <= 0) {
                 dmg = 1;
             }

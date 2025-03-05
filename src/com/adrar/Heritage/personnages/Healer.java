@@ -4,9 +4,9 @@ public class Healer extends Personnage {
 
     private Integer mana;
 
-    public Healer(String nom, Integer vie, Integer attaque, Integer defense, Integer mana){
-        super(nom,vie,attaque,defense);
-        this.mana = mana;
+    public Healer(String nom){
+        super(nom,15,3,2,0.1,"healer");
+        this.mana = 10;
     }
 
     public Integer getMana() {
@@ -22,7 +22,8 @@ public class Healer extends Personnage {
         double temp = Math.random();
         if(temp<=0.75){
             cible.setVie(cible.getVie()+this.getAttaque());
-            System.out.println(this.getNom()+" a soigné "+cible.getNom()+" de "+this.getAttaque());
+            System.out.println(this.getNom()+" a soigné "+cible.getNom()+" de "+this.getAttaque()+" en utilisant 1 point de mana.");
+            this.setMana(this.getMana()-1);
         }
         return cible;
     }

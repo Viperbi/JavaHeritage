@@ -6,9 +6,9 @@ public class Guerrier extends Personnage {
 
     private Integer bonusDefense;
 
-    public Guerrier(String nom, Integer vie, Integer attaque, Integer defense, Integer bonusDefense){
-        super(nom,vie,attaque,defense);
-        this.bonusDefense = bonusDefense;
+    public Guerrier(String nom){
+        super(nom,25,2,3,0.1,"healer");
+        this.bonusDefense = 3;
     }
 
     public Integer getBonusDefense() {

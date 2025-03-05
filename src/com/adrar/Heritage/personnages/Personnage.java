@@ -6,14 +6,17 @@ public abstract class Personnage {
     private Integer vie;
     private Integer attaque;
     private Integer defense;
+    private double critical;
+    private String classe;
 
     public Personnage(){}
 
-    public Personnage(String nom, Integer vie, Integer attaque, Integer defense){
+    public Personnage(String nom, Integer vie, Integer attaque, Integer defense,double critical,String classe){
         this.nom = nom;
         this.vie = vie;
         this. attaque = attaque;
         this.defense = defense;
+        this.critical = critical;
     }
 
     public String getNom() {
@@ -46,6 +49,22 @@ public abstract class Personnage {
 
     public void setDefense(Integer defense) {
         this.defense = defense;
+    }
+
+    public double getCritical() {
+        return critical;
+    }
+
+    public void setCritical(double critical) {
+        this.critical = critical;
+    }
+
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
     }
 
     public Personnage attaquer(Personnage cible){
